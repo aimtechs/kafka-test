@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<property name="LOG_PATH"
+		value="/home/zhwan/......................" />
+
+	<property name="logPattern"
+			  value="%date %-5level [%thread] %logger[%line] - %msg%n" />
+
+	<appender name="TEXT_CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<charset>UTF-8</charset>
+			<Pattern>${logPattern}</Pattern>
+		</encoder>
+	</appender>
+
+	<logger name="org.apache.kafka.clients.consumer.internals.ConsumerCoordinator" level="INFO" />
+	<logger name="org.springframework.kafka.listener.KafkaMessageListenerContainer" level="INFO" />
+	<logger name="org.apache.kafka.clients.consumer.internals.AbstractCoordinator" level="INFO" />
+	<logger name="org.apache.kafka.common.metrics.Metrics" level="INFO" />
+
+	<root level="DEBUG">
+		<appender-ref ref="TEXT_CONSOLE" />
+	</root>
+
+</configuration>
